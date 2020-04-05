@@ -24,3 +24,6 @@ t4 = (1,0,0.0002,'str',True,True,False,(1,),[2,],{'key1':'15'},{'set1','set2'})
 # print(t4.index(0.0002))     #结果：2
 # print(t4.count(1))          #结果是：3：把1当做True来计数了
 # print(t4.count(0))          #结果是：2：把0当做Flase来计数了
+
+
+222
