@@ -1,5 +1,5 @@
 #coding=utf-8
-#基本数据类型和字符串相关函数
+# 基本数据类型和字符串相关函数
 # 用数据类型:数字、布尔值、字符串shr、元组tuple、列表list、字典、集合set
 ##数字:整数int、浮点数float
     #查看变量类型：type()
@@ -45,21 +45,21 @@ person4 = temdkh.format('张三',18,500.59)
 print(person4)
 print('姓名：{:s}，    年龄：{:d}，    金额：{:f}'.format('张三',18,500.59))
                     #输出： 格式.format(内容)
-        # def xxb():
-        #     name = input('name:')
-        #     age = input('age:')
-        #     address = input('adress:')
-        #     hobby = input('hobby:')
-        #     salary = float(input('salary'))
-        #     work_year = input('work_year')
-        #     print('''your information is:
-        #         name:{1}
-        #         age:{2}
-        #         address:{3}
-        #         hobby:{4}
-        #         salary:{5:0>8.5f}
-        #         work_year:{6}'''.format(name,age,age,address,hobby,salary,work_year,work_year))
-        # xxb()
+# def xxb():
+#     name = input('name:')
+#     age = input('age:')
+#     address = input('adress:')
+#     hobby = input('hobby:')
+#     salary = float(input('salary'))
+#     work_year = input('work_year')
+#     print('''your information is:
+#         name:{1}
+#         age:{2}
+#         address:{3}
+#         hobby:{4}
+#         salary:{5:0>8.5f}
+#         work_year:{6}'''.format(name,age,age,address,hobby,salary,work_year,work_year))
+# xxb()
 #字符串常用函数
 str1_4 = 'hello python1 hahaha  *\n'
     #检索字符串
