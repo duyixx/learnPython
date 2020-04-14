@@ -29,6 +29,35 @@ print(s_1)
 print('''111
 222
 333''','h2',"h3")
-#输入
+#输入input
 s = input("please input")
 print(s)
+
+
+
+#作业：
+"""
+一、下面那些不能作为变量？
+1、find     2、 _num    3、7val        4、add.       5、def     
+6、pan      7、-print   8、open_file   9、FileName   10、9prints  
+11、INPUT   12、ls      13、user^name  14、list1     15、str_
+16、_888    17、is      18、true       19、none      20、try  
+二、请描述一下变量的命名规范，（简单题）
+三、python如何如何添加注释
+四、把学的python基本语法，总结成笔记（以后每次课都要整理）
+
+"""
+#答案：
+"""
+一：
+不符合命名格式：7val    add.     -print     9prints   user^name   is 
+使用关键字：def is try
+二：
+组成为字母、数字和下划线，不能以数字开头且不能使用系统关键字。
+三：
+方法：  #注释内容     或者直接用字符串进行注释
+四：
+今天基本语法总结：print()、input()、print(keyword.kwlist)
+"""
+
+
