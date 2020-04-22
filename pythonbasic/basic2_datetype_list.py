@@ -40,8 +40,16 @@ t4 = [1,0,0.0002,'str',True,True,False,(1,),[2,'asd'],{'key1':'15'},{'set1','set
 # print(t4.pop(-1))                 #注意：str.pop(index) 会删除str中指定索引的位置的字符，同时会返回被删除的value
                                     #而.clear()、.remove(value)  等往往返回是None
 ''' ## 其它用法：'''
-     ## 获取元素的索引值.index(元素)、.count(元素)
+     ## 获取元素的索引值    .index(元素)  .count(元素)   sum()
 print(t4.index(0.0002))   # 结果：2      确定元素所在索引位置
 print(t4.count(1))          # 结果是：3：把1当做True来计数了   统计列表里该元素的个数
 print(t4.count(0))          # 结果是：2：把0当做False来计数了
-
+print(sum([1, 2, 3]))       # sum()
+    ## 排序
+        # .sort(reverse = True)  降序排列原变量
+        # sorted(iterable, reverse = Flase)  返回升序排列的结果，默认升序, 不改变原变量
+lists = [1,3,1,5,4]  # ["s", "b","a"]
+lists.sort()
+print(lists)
+listj = sorted(lists, reverse=True)
+print(listj)
