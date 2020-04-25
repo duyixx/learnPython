@@ -90,7 +90,7 @@ set2 = set([1, 1, 3, 5, 6])  # set(iterable),推荐方法
 print("set元素唯一且无序：", set0, set1, set2)
 # 2. 增删集合的元素
 set2.add("added")  # .add(元素) 增加元素
-# set2.add([1, 5, 6])            # 不能使用可迭代对象作为.add()的参数
+# set2.add([1, 5, 6])            # 不能使用可迭代对象作为.add()的参数,因为不能hash()
 del set1
 set2.pop()  # .pop() 对于有索引的对象不指定参数时等价于.pop(-1)，对于dict需要指定key，set则不指定
 print("set2被pop后", set2)
