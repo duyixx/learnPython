@@ -24,7 +24,7 @@ if 判断条件1:
 #             print("welcome to back!")
 #             break
 #         else:
-#             print("password error")
+#             print("password error! input again!")
 # else:
 #     print('name error')
 

@@ -44,24 +44,24 @@ import random
 #         break
 
 
-#练习：人机对拳:“猜拳娶老婆！！”
+# 练习：人机对拳:“猜拳娶老婆！！”
 role_dict = {1:'羽川翼',2:'小鸟游六花',3:'蕾姆'}
 cq_dict = {1:'剪刀',2:'石头',3:'布'}
-#score0 平局次数；score1 玩家胜次；score2 对手胜次
+# score0 平局次数；score1 玩家胜次；score2 对手胜次
 score1 = score2 = score0 = 0
 print('game start!')
-#选择对手
-pcindex = int(input("选择你的对手:1:'羽川翼',2:'小鸟游六花',3:'蕾姆'"))
-print("你的对手是{}".format(role_dict[pcindex])+'：')
+# 选择对手
+pc_index = int(input("选择你的对手:1:'羽川翼',2:'小鸟游六花',3:'蕾姆'"))
+print("你的对手是{}".format(role_dict[pc_index]) + '：')
 while True:
-#玩家出拳
+# 玩家出拳
     cq = int(input("请出拳：1:'剪刀',2:'石头',3:'布'"))
     print("出拳："+cq_dict[cq])
-#对手出拳
+# 对手出拳
     pccq = random.randint(1,3)
-    print(role_dict[pcindex],'出拳:',cq_dict[pccq])
+    print(role_dict[pc_index], '出拳:', cq_dict[pccq])
 
-#判断胜负
+# 判断胜负
 #   1剪刀2石头3布   玩家赢 -2 or 1
 # 玩家：1   2   3
 # 对手：3   1   2
@@ -71,22 +71,22 @@ while True:
 # 对手：2    3    1
 #      -1   -1    2
 
-    if (cq-pccq) in (-2,1):
-        score1 +=1
+    if (cq-pccq) in (-2, 1):
+        score1 += 1
         print('you win！')
-    elif (cq-pccq) in (-1,2):
-        score2 +=1
+    elif (cq-pccq) in (-1, 2):
+        score2 += 1
         print('you lose！')
     else:
         print('no winer。')
-        score0 +=1
-#是否继续？
+        score0 += 1
+# 是否继续？
     again = input('again?y/n')
     if again == 'y':
         continue
     else:
-        print('你赢了{}次, {}赢了{}次, 平局{}次'.format(score1,role_dict[pcindex],score2,score0))
-        if score1-3 >score2:
-            print('恭喜你！{}是你老婆了(>.<)!!!!'.format(role_dict[pcindex]))
+        print('你赢了{}次, {}赢了{}次, 平局{}次'.format(score1, role_dict[pc_index], score2, score0))
+        if score1-3 > score2:
+            print('恭喜你！{}是你老婆了(>.<)!!!!'.format(role_dict[pc_index]))
         break
 

@@ -39,18 +39,19 @@ pc_punch = None
 
 def player_action():
     global player_punch
-    player_punch = int(input("玩家请出拳：1: '石头', 2: '剪刀', 3: '布', 4:'退出'"))
     try:
+        player_punch = int(input("玩家出拳：1: '石头', 2: '剪刀', 3: '布', 4:'退出'"))
         if player_punch != 4:
-            print("玩家出：{}".format(punch_list[player_punch]))
-    except KeyError:
-        print("你只能输入这些数字来进行或者结束游戏。")
+            print("这一回合：\n    玩家出{}".format(punch_list[player_punch]))
+    except (KeyError, ValueError):
+        print("    你只能输入这些数字来进行或者结束游戏。")
+
 
 def pc_action():
     global pc_punch, player_punch
-    if player_punch in (1, 2, 3) :
+    if player_punch in (1, 2, 3):
         pc_punch = random.randint(1,3)
-        print("电脑出{}".format(punch_list[pc_punch]))
+        print("    电脑出{}".format(punch_list[pc_punch]))
 
 
 def judge():
@@ -59,23 +60,24 @@ def judge():
     # 玩家胜：player_punch - pc punch in (-1,2)
     # 电脑胜：player_punch - pc_punch in (-2,1)
     # 平局：其他
-    global pc_punch,player_punch
+    global pc_punch, player_punch
     if player_punch in (1, 2, 3) :
         if player_punch - pc_punch in (-1, 2):
-            print("玩家胜")
+            print("    玩家胜")
         elif player_punch - pc_punch in (-2, 1):
-            print("电脑胜")
+            print("    电脑胜")
         else:
-            print("平局")
-    else:
-        print("游戏结束")
+            print("    平局")
+
+print("2. 猜拳游戏开始：你只能输入数字，不然发生什么我不管")
 while True:
-    print("猜拳游戏开始：")
     player_action()
     pc_action()
     judge()
     if player_punch == 4:
+        print("玩家选择退出，游戏结束")
         break
+    print("还玩吗？")
 
 
 
@@ -88,32 +90,28 @@ c.如果输入0，退出循环
 d.输入其他内容，提示：“输入有误，请重新输入！”
 提示：本题可以使用if和while循环，同时需要校验用户的输入是否正确。不用考虑浮点数等情况。
 """
-def printday():
-    daytime = int(input("请输入代表天星期的数字："))
+print("3. 输入数字显示星期数")
+weekday_list = {1: "星期一", 2:"星期二", 3:"星期三", 4:"星期四", 5:"星期五", 6:"周末", 7:"周末"}
+
+
+def print_day():
+    try:
+        daytime = int(input("请输入代表天星期的数字："))
+    except ValueError:
+        print("    输入有误，请重新输入")
+        return "isNaN"
     if daytime == 0:
         return 0
-    elif daytime == 1:
-        print("星期一")
-    elif daytime == 2:
-        print("星期二")
-    elif daytime == 3:
-        print("星期三")
-    elif daytime == 4:
-        print("星期四")
-    elif daytime == 5:
-        print("星期五")
-    elif daytime == 6:
-        print("周末")
-    elif daytime == 7:
-        print("周末")
+    elif daytime < 8:
+        print("    {}".format(weekday_list[daytime]))
     else:
-        print("输入有误，请重新输入")
+        print("    输入有误，请重新输入")
+
 
 while True:
-    circle = printday()
+    circle = print_day()
     if circle == 0:
         break
-
 
 
 """
@@ -121,9 +119,10 @@ while True:
 使用循环实现排序算法（冒泡，选择等算法选择一个，请自行了解。）
 提示：利用for循环，完成a=[1,7,4,89,34,2]的排序（小的数字排前面，大的排后面），不能使用sort、sorted等内置函数或方法
 """
+print("4. 冒泡排序：")
 a = [1, 7, 4, 89, 34, 2]
 for c1 in range(1,len(a)):
     for c2 in range(0,len(a)-c1):
         if a[c2] > a[c2+1]:
-            a[c2], a[c2+1]= a[c2+1],a[c2]
+            a[c2], a[c2+1] = a[c2+1],a[c2]
 print(a)
