@@ -142,7 +142,7 @@ for item in translate1(cases):
     print(item)
 
 # 要求二：
-# 分析：基于要求一，要使用translate1()； case_id 的定位：res1[i]["case_id"],要求i>3； Python3.6以上dict有序；
+# 分析：基于要求一，要使用translate1()； case_id 的定位：res1[i]["case_id"],要求>3； Python3.6以上dict有序；
 # 获取用例数据：res1[i]
 print("4. 要求二")
 
