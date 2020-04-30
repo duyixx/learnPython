@@ -1,7 +1,7 @@
 """
     @ 功能：day07作业（函数）
     @ author：古城
-    @ create：20200429 22:00
+    @ create：20200501 01:00
 """
 import random
 
