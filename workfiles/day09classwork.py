@@ -3,7 +3,7 @@
     @ author：古城
     @ create：20200509 13:00
 """
-import keyword, textwrap, re
+import keyword, textwrap
 
 # 简答题
 # 1、什么是全局变量？
@@ -68,7 +68,7 @@ def cwrdata(dictlist_temp):
         # file.seek(0, 0)
         # print(file.readline())
         # file.close()
-    # 添加用户信息
+        # 添加用户信息
         for i in range(0, len(dictlist_temp)):
             line_info_original = str(list(dictlist_temp[i].values()))
             line_info = line_info_original.replace("'", "").replace("[", "").replace("]", "")
@@ -77,7 +77,8 @@ def cwrdata(dictlist_temp):
 
 
 def redata(dictlist_temp):
-    """读取cwrdata()通过dictlist_temp生成的文件"""
+    """读取cwrdata()通过dictlist_temp生成的文件
+    """
     cwrdata(dictlist_temp)
     with open('person_data', 'r', encoding='utf-8') as reader:
         lines = reader.read()
@@ -85,3 +86,39 @@ def redata(dictlist_temp):
 
 
 redata(person_info)
+
+# 6、编写如下程序
+# 有两行数据，存放在txt文件里面(手动建立文件，并添加如下数据)：
+# url:/futureloan/mvc/api/member/register@mobile:18866668888@pwd:123456
+# url:/futureloan/mvc/api/member/recharge@mobile:18866668888@amount:1000
+# 请利用上课所学知识，把txt里面的两行内容，取出然后返回如下格式的数据：（可定义函数）
+# [{'url':'/futureloan/mvc/api/member/register','mobile':'18866668888','pwd':'123456'},{'url':'/futureloan/mvc/api/member/recharge','mobile':'18866668888','amount':'1000'}]
+
+# 创建文件url.txt，并写入数据
+with open('url.txt', 'w+', encoding='utf-8') as prepare:
+    prepare.writelines(
+        "url:/futureloan/mvc/api/member/register@mobile:18866668888@pwd:123456\nurl:/futureloan/mvc/api/member/recharge@mobile:18866668888@amount:1000")
+    prepare.close()
+
+
+def get_data(file_path):
+    "功能：从文件file_path中读取指定格式的文件输出为[{},{}]格式的字典型列表"
+    result = []
+    with open(file_path, 'r', encoding='utf-8') as reader:
+        while True:  # 循环读取每一行的数据
+            line_original = reader.readline()
+            if line_original =="":  # 每次读取一行数据，如果读取的结果为空，则结束循环
+                break
+            else:  # 把第一行的数据转化为字典形式，并加入result列表
+                line = line_original.replace('\n', '')
+                line_list = line.split('@')
+                dict_tem = {}
+                for item in line_list:
+                    item_list = item.split(':')
+                    dict_tem[item_list[0]] = item_list[1]
+                result.append(dict_tem)
+
+    print(result)
+
+
+get_data('url.txt')
